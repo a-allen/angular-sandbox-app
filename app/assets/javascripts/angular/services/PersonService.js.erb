@@ -1,0 +1,4 @@
+app.factory('Person', function($resource){
+	var resource = $resource("<%= asset_path 'angular/json/one.json' %>");
+	return resource;
+});
