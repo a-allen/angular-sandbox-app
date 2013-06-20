@@ -1,6 +1,9 @@
 (function(angular, app) {
 
 	app.controller('TableView', function TableView($scope, Person) {
+		// using the Person service injected above
+		// query the URL and set this scope variable
+		// to the data returned
 		$scope.people = Person.query();
 	});
 

@@ -6,6 +6,9 @@
 		$scope.events   = Event.query();
 		$scope.newEvent = '';
 		
+		// Add Event funtion adds an event 
+		// by saving $scope.newEvent 
+		// to an "Event" service instance
 		$scope.addEvent = function() {
 
 			if (!$scope.newEvent.length) {
@@ -17,6 +20,8 @@
 			$scope.newEvent = '';
 		};
 
+		// Delete Event splice out the event from the scope 
+		// and then call delete on the event and yank by ID
 		$scope.deleteEvent = function(ID, index) {
 
 			$scope.events.splice(index, 1);
