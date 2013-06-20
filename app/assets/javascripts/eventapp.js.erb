@@ -1,0 +1,8 @@
+'use strict';
+
+var app = angular.module("RailsAngular", ["ngResource"]).
+  config(['$routeProvider', function($routeProvider) {
+  $routeProvider.
+      when('/', { templateUrl: "<%= asset_path 'angular/eventlisting/EventListView.html.erb' %>", controller: "EventCtrl" }).
+      when('/eventlist/:id', { templateUrl: "<%= asset_path 'angular/show/EventDetail.html.erb' %>", controller: "ShowCtrl" });
+}]);

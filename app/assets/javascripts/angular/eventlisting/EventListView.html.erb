@@ -1,0 +1,21 @@
+<div ng-controller="EventCtrl">
+	<h1>{{message}}</h1>
+
+	<div id="event_list_container">
+		
+		<ol>
+			<li data-ng-repeat="event in events">
+				<input data-ng-model="event.name" value="{{event.name}}" data-ng-change="event.dirty = true"> : <span>{{event.created_at | date:'fullDate'}}</span>
+				<button data-ng-show="event.dirty" data-ng-click="updateEvent(event.id)">Update</button>
+				<button data-ng-click="deleteEvent(event.id, $index)">Delete</button>
+				<a href="eventlist/{{event.id}}">[view event]</a>
+			</li>
+		</ol>	
+
+		<form id="event-form" data-ng-submit="addEvent()">
+			<input id="new-event" placeholder="Add a new event" data-ng-model="newEvent">
+			<input type="submit" value="Add New Event">
+		</form>
+
+	</div>
+</div>

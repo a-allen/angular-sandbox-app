@@ -1,0 +1,9 @@
+(function(angular, app) {
+
+	app.controller('TableView', function TableView($scope, $http) {
+		$http.get("<%= asset_path 'angular/json/one.json' %>").success(function(data){
+        	$scope.rows = data;
+    	});
+	});
+
+})(angular, app);
